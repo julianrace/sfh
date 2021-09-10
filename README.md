@@ -1,6 +1,8 @@
 # sfh
 A software-only implementation of the FloatHub protocol.
 
+**This fork updates SFH to incorporate 1wire sensors for RaspberryPi to monitor things like voltage and atmospheric pressure**
+
 The FloatHub system provides a means for monitoring marine vessels remotely.
 Although there is a commercial device available to support this
 functionality, much of the monitoring capability can be achieved purely
