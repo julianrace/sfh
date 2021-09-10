@@ -510,6 +510,15 @@ try:
 
     if ( currently_active and  (datetime.datetime.utcnow() - last_message_sent_timestamp).total_seconds() > 30 ) or (datetime.datetime.utcnow() - last_message_sent_timestamp).total_seconds() > 60 * 10:    
       last_message_sent_timestamp = datetime.datetime.utcnow()
+      try:
+        i2c = board.I2C()
+        sht = adafruit_shtc3.SHTC3(i2c)
+        print("Temperature: %0.1f C" % sht.temperature)
+        fh_t.set("%6.3f" % sht.temperature)
+        print("Humidity: %0.1f %%fH" % sht.relative_humidity)
+      except:
+        print("Error reading I2C data, continuing")
+        pass
       send_fh()
 
     try:
