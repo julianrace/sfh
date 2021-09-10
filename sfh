@@ -54,6 +54,20 @@ except:
   print()
   sys.exit()
 
+#Import CircuitPython adafruit libraries for I2C sensors
+try:
+  import board
+  import adafruit_shtc3
+
+except:
+
+  print()
+  print("You are missing the adafruit board libraries.")
+  print("You should be able to install it with:")
+  print()
+  print("    sudo pip3 install adafruit-circuitpython-shtc3")
+  print()
+  sys.exit()
 
 #
 # Steup argument paserser
